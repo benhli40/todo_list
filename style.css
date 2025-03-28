@@ -1,0 +1,145 @@
+:root {
+    --bg: #f0f2f5;
+    --card-bg: white;
+    --text: #333;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
+    --item-bg: #f9fafb;
+    --complete: #10b981;
+    --delete: #ef4444;
+}
+
+body.dark {
+    --bg: #1e1e2f;
+    --card-bg: #2c2c3b;
+    --text: #f9fafb;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --item-bg: #3c3c4e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.todo-container {
+    background: var(--card-bg);
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+}
+
+.todo-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    color: var(--text);
+}
+
+.input-group button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.input-group button:hover {
+    background: var(--accent-hover);
+}
+
+.todo-list {
+    list-style: none;
+    padding: 0;
+}
+
+.todo-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--item-bg);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: grab;
+    transition: 0.3s ease;
+}
+
+.todo-list li.completed span {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.actions button {
+    background: none;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.actions button.complete {
+    color: var(--complete);
+}
+
+.actions button.delete {
+    color: var(--delete);
+}
+
+.dark-toggle {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+}
+
+.dark-toggle button {
+    background: none;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.dark-toggle button:hover {
+    background: var(--accent);
+    color: white;
+}
+
+.drag-over {
+    border: 2px dashed var(--accent);
+}
